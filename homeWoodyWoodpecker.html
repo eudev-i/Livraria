@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="utf-8">
+        <title>Home Woody Woodpecker</title>
+        <link rel="stylesheet"
+              type="text/css"
+              href="css/style.css">
+    </head>
+    <body>
+        <div id="cabecalho100">
+            <header>
+                    <img src="imagens/logo.png" id="imgLogo" alt="logo" title="logo">
+
+                    <nav id="menu1">
+                        <div class="menu1Item">
+                            Promoções
+                        </div>
+                        <div class="menu1Item">
+                            Livro do Mês
+                        </div>
+                        <div class="menu1Item">
+                            Autores em Destaque
+                        </div>
+                        <div class="menu1Item">
+                            Nossas Lojas
+                        </div>
+                        <div class="menu1Item">
+                            Sobre a Livraria
+                        </div>
+                        <div class="menu1Item">
+                            Fale Conosco
+                        </div>
+                    </nav>
+
+                    <div id="areaLogin">
+                        Usuário:
+                        <p><input type="text" name="txtUsuario" size="24" class="textLogin" placeholder="User">
+                        Senha:
+                        <p><input type="password" name="txtSenha" size="24" class="textLogin">
+                        <p><input type="button" name="btnEnviarLogin" value="OK" id="btnEnviarLogin">
+                    </div>
+                </header>
+            </div>    
+        
+        <div id="principal">
+            
+            
+            <div id="conteudo">
+                <div id="slider">
+                    <script src="js/jquery-1.11.3.min.js" type="text/javascript"></script>
+    <script src="js/jssor.slider-27.5.0.min.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        jQuery(document).ready(function ($) {
+
+            var jssor_1_SlideshowTransitions = [
+              {$Duration:800,$Opacity:2}
+            ];
+
+            var jssor_1_options = {
+              $AutoPlay: 1,
+              $SlideshowOptions: {
+                $Class: $JssorSlideshowRunner$,
+                $Transitions: jssor_1_SlideshowTransitions,
+                $TransitionsOrder: 1
+              },
+              $ArrowNavigatorOptions: {
+                $Class: $JssorArrowNavigator$
+              },
+              $BulletNavigatorOptions: {
+                $Class: $JssorBulletNavigator$
+              }
+            };
+
+            var jssor_1_slider = new $JssorSlider$("jssor_1", jssor_1_options);
+
+            /*#region responsive code begin*/
+
+            var MAX_WIDTH = 1100;
+
+            function ScaleSlider() {
+                var containerElement = jssor_1_slider.$Elmt.parentNode;
+                var containerWidth = containerElement.clientWidth;
+
+                if (containerWidth) {
+
+                    var expectedWidth = Math.min(MAX_WIDTH || containerWidth, containerWidth);
+
+                    jssor_1_slider.$ScaleWidth(expectedWidth);
+                }
+                else {
+                    window.setTimeout(ScaleSlider, 30);
+                }
+            }
+
+            ScaleSlider();
+
+            $(window).bind("load", ScaleSlider);
+            $(window).bind("resize", ScaleSlider);
+            $(window).bind("orientationchange", ScaleSlider);
+            /*#endregion responsive code end*/
+        });
+    </script>
+    <style>
+        /*jssor slider loading skin spin css*/
+        .jssorl-009-spin img {
+            animation-name: jssorl-009-spin;
+            animation-duration: 1.6s;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+        }
+
+        @keyframes jssorl-009-spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        /*jssor slider bullet skin 051 css*/
+        .jssorb051 .i {position:absolute;cursor:pointer;}
+        .jssorb051 .i .b {fill:#fff;fill-opacity:0.5;}
+        .jssorb051 .i:hover .b {fill-opacity:.7;}
+        .jssorb051 .iav .b {fill-opacity: 1;}
+        .jssorb051 .i.idn {opacity:.3;}
+
+        /*jssor slider arrow skin 051 css*/
+        .jssora051 {display:block;position:absolute;cursor:pointer;}
+        .jssora051 .a {fill:none;stroke:#fff;stroke-width:1100;stroke-miterlimit:10;}
+        .jssora051:hover {opacity:.8;}
+        .jssora051.jssora051dn {opacity:.5;}
+        .jssora051.jssora051ds {opacity:.3;pointer-events:none;}
+    </style>
+    <div id="jssor_1" style="position:relative;margin:0 auto;top:0px;left:0px;width:980px;height:350px;overflow:hidden;visibility:hidden;">
+        <!-- Loading Screen -->
+        <div data-u="loading" class="jssorl-009-spin" style="position:absolute;top:0px;left:0px;width:100%;height:350px;text-align:center;background-color:rgba(0,0,0,0.7);">
+            <img style="margin-top:-19px;position:relative;top:50%;width:38px;height:38px;" src="img/spin.svg" />
+        </div>
+        <div data-u="slides" style="cursor:default;position:relative;top:0px;left:0px;width:980px;height:320px;overflow:hidden;">
+            <div>
+                <img data-u="image" src="imagens/slideLeuHoje.png" />
+            </div>
+            <div>
+                <img data-u="image" src="imagens/You're%20beautiful!.png" />
+            </div>
+            <div>
+                <img data-u="image" src="imagens/promocoes.png" />
+            </div>
+            <div>
+                <img data-u="image" src="img/004.jpg" />
+            </div>
+            <div>
+                <img data-u="image" src="img/005.jpg" />
+            </div>
+            <div>
+                <img data-u="image" src="img/006.jpg" />
+            </div>
+            <div>
+                <img data-u="image" src="img/007.jpg" />
+            </div>
+            <div>
+                <img data-u="image" src="img/008.jpg" />
+            </div>
+            <div>
+                <img data-u="image" src="img/009.jpg" />
+            </div>
+            <div>
+                <img data-u="image" src="img/010.jpg" />
+            </div>
+            <div>
+                <img data-u="image" src="img/011.jpg" />
+            </div>
+            <div>
+                <img data-u="image" src="img/012.jpg" />
+            </div>
+        </div>
+        <!-- Bullet Navigator -->
+        <div data-u="navigator" class="jssorb051" style="position:absolute;bottom:-20px;right:12px;" data-autocenter="1" data-scale="0.5" data-scale-bottom="0.75">
+            <div data-u="prototype" class="i" style="width:16px;height:16px;">
+                <svg viewbox="0 0 16000 16000" style="position:absolute;top:0;left:0;width:100%;height:100%;">
+                    <circle class="b" cx="8000" cy="8000" r="5800"></circle>
+                </svg>
+            </div>
+        </div>
+        <!-- Arrow Navigator -->
+        <div data-u="arrowleft" class="jssora051" style="width:55px;height:55px;top:0px;left:25px;" data-autocenter="2" data-scale="0.75" data-scale-left="0.75">
+            <svg viewbox="0 0 16000 16000" style="position:absolute;top:0;left:0;width:100%;height:100%;">
+                <polyline class="a" points="11040,1920 4960,8000 11040,14080 "></polyline>
+            </svg>
+        </div>
+        <div data-u="arrowright" class="jssora051" style="width:55px;height:55px;top:0px;right:25px;" data-autocenter="2" data-scale="0.75" data-scale-right="0.75">
+            <svg viewbox="0 0 16000 16000" style="position:absolute;top:0;left:0;width:100%;height:100%;">
+                <polyline class="a" points="4960,1920 11040,8000 4960,14080 "></polyline>
+            </svg>
+        </div>
+    </div>
+                </div>
+                
+                <div id="conteudo2">
+                    <nav id="menu2">
+                        <div class="menu2Item">
+                            Romance
+                        </div>
+
+                        <div class="menu2Item">
+                            Drama
+                        </div>
+                    </nav>
+                
+                    <div id="catalogo">
+                        <div class="areaLivros">
+
+                            <div class="imgLivro">
+                                <img src="imagens/livroPadrao.jpg" alt="Livro" title="livro" class="imgLivroItem">
+                            </div>
+
+                            <div class="nomeLivro">
+                                <span class="negrito">Nome:</span> ME POUPE!
+                            </div>
+
+                            <div class="descricaoLivro">
+                                <span class="negrito">Descrição:</span> 10 passos para nunca mais faltar dinheiro no seu bolso
+                            </div>
+
+                            <div class="precoLivro">
+                                <span class="negrito">Preço:</span> R$ 24,10
+                            </div>
+
+                            <div class="btnDestaque">
+                                Destaque
+                            </div>
+
+                        </div>
+
+                        <div class="areaLivros">
+
+                            <div class="imgLivro">
+                                <img src="imagens/livroPadrao.jpg" alt="Livro" title="livro" class="imgLivroItem">
+                            </div>
+
+                            <div class="nomeLivro">
+                                <span class="negrito">Nome:</span> ME POUPE!
+                            </div>
+
+                            <div class="descricaoLivro">
+                                <span class="negrito">Descrição:</span> 10 passos para nunca mais faltar dinheiro no seu bolso
+                            </div>
+
+                            <div class="precoLivro">
+                                <span class="negrito">Preço:</span> R$ 24,10
+                            </div>
+
+                            <div class="btnDestaque">
+                                Destaque
+                            </div>
+
+                        </div>
+
+                        <div class="areaLivros">
+
+                            <div class="imgLivro">
+                                <img src="imagens/livroPadrao.jpg" alt="Livro" title="livro" class="imgLivroItem">
+                            </div>
+
+                            <div class="nomeLivro">
+                                <span class="negrito">Nome:</span> ME POUPE!
+                            </div>
+
+                            <div class="descricaoLivro">
+                                <span class="negrito">Descrição:</span> 10 passos para nunca mais faltar dinheiro no seu bolso
+                            </div>
+
+                            <div class="precoLivro">
+                                <span class="negrito">Preço:</span> R$ 24,10
+                            </div>
+
+                            <div class="btnDestaque">
+                                Destaque
+                            </div>
+                            
+                        </div>
+
+                        <div class="areaLivros">
+
+                            <div class="imgLivro">
+                                <img src="imagens/livroPadrao.jpg" alt="Livro" title="livro" class="imgLivroItem">
+                            </div>
+
+                            <div class="nomeLivro">
+                                <span class="negrito">Nome:</span> ME POUPE!
+                            </div>
+
+                            <div class="descricaoLivro">
+                                <span class="negrito">Descrição:</span> 10 passos para nunca mais faltar dinheiro no seu bolso
+                            </div>
+
+                            <div class="precoLivro">
+                                <span class="negrito">Preço:</span> R$ 24,10
+                            </div>
+
+                            <div class="btnDestaque">
+                                Destaque
+                            </div>
+
+                        </div>
+
+                        <div class="areaLivros">
+
+                            <div class="imgLivro">
+                                <img src="imagens/livroPadrao.jpg" alt="Livro" title="livro" class="imgLivroItem">
+                            </div>
+
+                            <div class="nomeLivro">
+                                <span class="negrito">Nome:</span> ME POUPE!
+                            </div>
+
+                            <div class="descricaoLivro">
+                                <span class="negrito">Descrição:</span> 10 passos para nunca mais faltar dinheiro no seu bolso
+                            </div>
+
+                            <div class="precoLivro">
+                                <span class="negrito">Preço:</span> R$ 24,10
+                            </div>
+
+                            <div class="btnDestaque">
+                                Destaque
+                            </div>
+
+                        </div>
+
+                        <div class="areaLivros">
+
+                            <div class="imgLivro">
+                                <img src="imagens/livroPadrao.jpg" alt="Livro" title="livro" class="imgLivroItem">
+                            </div>
+
+                            <div class="nomeLivro">
+                                <span class="negrito">Nome:</span> ME POUPE!
+                            </div>
+
+                            <div class="descricaoLivro">
+                                <span class="negrito">Descrição:</span> 10 passos para nunca mais faltar dinheiro no seu bolso
+                            </div>
+
+                            <div class="precoLivro">
+                                <span class="negrito">Preço:</span> R$ 24,10
+                            </div>
+
+                            <div class="btnDestaque">
+                                Destaque
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <aside id="caixaRedesSociais">
+                <div class="redesSociais">
+                    <img src="imagens/facebook.png" alt="Link Facebook" title="Link Facebook" class="imgRedesSociais">
+                </div>
+                <div class="redesSociais">
+                    <img src="imagens/google.png" alt="Link Google" title="Link Google" class="imgRedesSociais">
+                </div>
+                <div class="redesSociais">
+                    <img src="imagens/twitter.png" alt="Link Twitter" title="Link Twitter" class="imgRedesSociais">
+                </div>
+            </aside>
+            
+            <footer>
+                Copiright 2018 - Todos os direitos reservados / Desenvolvido por: Vitoria Gonçalves
+            </footer>
+        </div>
+    </body>
+</html>

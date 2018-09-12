@@ -1,0 +1,402 @@
+body, h1, h2, h3, p, ul, ol, li, figure{
+    padding: 0px;
+    margin: 0px;
+}
+#principal{
+    width:1300px;
+    min-height: 1320px;
+    height: auto;
+    overflow: hidden;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #ddcfc2;
+    
+}
+#principalPromocoes{
+    width:1300px;
+    min-height: 1910px;
+    height: auto;
+    overflow: hidden;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #ddcfc2;
+}
+#principalNossasLojas{
+    width:1300px;
+    min-height: 900px;
+    height: auto;
+    overflow: hidden;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #ddcfc2;
+}
+/*CABECALHO*/
+#cabecalho100{
+    width: 100%;
+    height: 140px;
+    background-color: #605855;
+    position: fixed;
+    z-index: 2;
+}
+header{
+    width:1300px;
+    height:140px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #605855;
+    
+}
+#imgLogo{
+    width: 400px;
+    height: 210px;
+    margin-left: -50px;
+    margin-top: -20px;
+    float: left;
+}
+#menu1{
+    width: 700px;
+    height: 140px;
+    /*background-color: aquamarine;*/
+    margin-left: -50px;
+    float: left;
+}
+.menu1Item{
+    width: 100px;
+    height: 50px;
+    /*background-color: antiquewhite;*/
+    margin-top: 80px;
+    font-family: Comic Sans MS;
+    font-size: 17px;
+    font-weight: bold;
+    color: #ea9049;
+    text-align: center;
+    float: left;
+    margin-left: 15px;
+    cursor: pointer;
+}
+.menu1Item:hover{
+    color: #e5d638;
+}
+#areaLogin{
+    width: 200px;
+    height: 135px;
+    /*background-color: cadetblue;*/
+    margin-left: 1100px;
+    font-family: Comic Sans MS;
+    font-size: 17px;
+    color: #966440;
+    font-weight: bold;
+    padding-top: 5px;
+}
+.textLogin{
+    border: 0px;
+    border-radius: 10px;
+    height: 25px;
+    background-color: #ddcfc2;
+}
+#btnEnviarLogin{
+    border: 0px;
+    border-radius: 10px;
+    width: 70px;
+    height: 20px;
+    background-color:#966440; 
+    margin-left: 127px;
+    font-family: Comic Sans MS;
+    color: #ddcfc2;
+    font-weight: bold;
+}
+/*CONTEUDO*/
+#conteudo{
+    width: 1100px;
+    min-height: 1250px;
+    height: auto;
+    overflow: hidden;
+    padding-top: 140px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #ddcfc2;
+}
+#conteudoPromocoes{
+    width: 1100px;
+    min-height: 1740px;
+    height: auto;
+    overflow: hidden;
+    padding-top: 140px;
+    margin-left: auto;
+    margin-right: auto;
+}
+#conteudoNossasLojas{
+    width: 1100px;
+    min-height: 730px;
+    height:auto;
+    overflow: hidden;
+    margin-left: auto;
+    margin-right: auto;
+}
+/*SLIDER*/
+#slider{
+    width: 1100px;
+    height: 350px;
+    background-color: blanchedalmond;
+}
+#imgPromocoes{
+    width: 1100px;
+    height: 350px;
+    background-image: url(../imagens/promocoes.png);
+    background-size: 1100px 350px;
+    background-repeat: no-repeat;
+}
+#conteudo2{
+    width: 1100px;
+    height: 800px;
+    float: left;
+}
+#conteudo2Promocoes{
+    width: 1100px;
+    height: 1300px;
+    float: left;
+}
+.desconto{
+    width: 1100px;
+    height: 450px;
+    margin-bottom: 20px;
+}
+h1{
+    width: 1100px;
+    height: 50px;
+    font-family: Comic Sans MS;
+    color: #393333;
+    font-weight: bold;
+    font-size: 45px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+.bordaBottom{
+    width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #605855;
+    border-bottom: 2px solid #605855;
+    margin-bottom:5px;
+}
+/*2º MENU*/
+#menu2{
+    width: 150px;
+    height: 780px;
+    float: left;
+    padding-top: 20px;
+}
+.menu2Item{
+    width: 150px;
+    height: 40px;
+    background-color: black;
+    color: #ea9049;
+    font-family: Comic Sans MS;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+    padding-top: 12px;
+    margin-bottom: 10px;
+}
+.menu2Item:hover{
+    background-color: #ea9049;
+    color: black;
+    transition: 3s;
+}
+/*LIVROS*/
+#catalogo{
+    width: 918px;
+    height: 765px;
+    margin-left: 150px;
+    padding: 16px;
+}
+.areaLivros{
+    width: 260px;
+    min-height: 350px;
+    height: auto;
+    overflow: hidden;
+    border-bottom: 1px solid #ea9049;
+    border-right: 1px solid #ea9049;
+    float: left;
+    padding: 15px;
+    margin-left: 15px;
+    margin-bottom: 40px;
+    color: #605855;
+}
+.areaLivros:hover{
+    box-shadow: 10px 10px 50px black;
+}
+.areaLivrosPromocoes{
+    width: 260px;
+    height: 350px;
+    background-color: #ea9049;
+    float: left;
+    padding: 15px;
+    margin-left: 50px;
+    margin-bottom: 20px;
+    color: #605855;
+}
+.imgLivro{
+    width: 128px;
+    height: 183px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.imgLivroItem{
+    width: 128px;
+    height: 183px;
+}
+.nomeLivro{
+    width:  260px;
+    height: auto;
+    margin-top: 10px;
+    font-family: Comic Sans MS;
+    font-size: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.negrito{
+    font-weight: bold;
+}
+.descricaoLivro{
+    width:  260px;
+    height: auto;
+    margin-top: 10px;
+    font-family: Comic Sans MS;
+    font-size: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.precoLivro{
+    width:  260px;
+    height: auto;
+    margin-top: 10px;
+    font-family: Comic Sans MS;
+    font-size: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.precoLivroPromocao{
+    width:  260px;
+    height: auto;
+    margin-top: 10px;
+    font-family: Comic Sans MS;
+    font-size: 15px;
+    margin-left: 15px;
+    text-decoration: line-through;
+    float: left;
+}
+.precoPromocao{
+    width:  260px;
+    height: auto;
+    margin-top: 10px;
+    font-family: Comic Sans MS;
+    font-size: 15px;
+    margin-left: 15px;
+}
+.btnDestaque{
+    border:0;
+    width: 100px;
+    height: 30px;
+    text-align: center;
+    font-family: Comic Sans MS;
+    font-size: 15px;
+    margin-top: 20px;
+    cursor: pointer;
+    margin-left: auto;
+    padding-top: 7px;
+    color: #ea9049;
+    background-color: black;
+}
+.btnDestaque:hover{
+    transition: 1s;
+    background-color: #ea9049;
+    color: black;
+}
+/*CAIXA REDES SOCIAIS*/
+#caixaRedesSociais{
+    width: 80px;
+    height: 300px;
+    margin-left: 1220px;
+    margin-top: -1100px;
+    position: fixed;
+}
+.redesSociais{
+    width: 100px;
+    height: 100px;
+}
+.redesSociais:hover{
+    cursor:pointer;
+}
+/*RODAPÉ*/
+footer{
+    width: 1300px;
+    height: 30px;
+    background-color:#605855;
+    text-align: center;
+    font-family: Comic Sans MS;
+    font-size: 15px;
+}
+/*LOJAS*/
+/*.lojas{
+    width: 420px;
+    height: 150px;
+    margin-left: 90px;
+    margin-top: 30px;
+    font-family: Comic Sans MS;
+    color: #ea9049;
+    float: left;
+    border: 5px solid #e5d638;
+    padding-top: 30px;
+    text-align: center;
+}
+h2{
+    font-size: 17px;
+    font-weight: bold;
+    
+    
+}*/
+
+.areaLojas1{
+    width: 950px;
+    height: 200px;
+    background-color: aquamarine;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+}
+.imgLoja{
+    width: 300px;
+    height: 200px;
+    float: left;
+
+}
+.lojas{
+    width: 600px;
+    height: 150px;
+    font-family: Comic Sans MS;
+    color: #ea9049;
+    text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
