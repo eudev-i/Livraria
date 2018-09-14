@@ -146,6 +146,10 @@ header{
     background-size: 1100px 350px;
     background-repeat: no-repeat;
 }
+#imgProm{
+    width: 1100px;
+    height: 350px;
+}
 #conteudo2{
     width: 1100px;
     min-height: 800px;
