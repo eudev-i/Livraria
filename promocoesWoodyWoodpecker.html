@@ -8,58 +8,73 @@
               href="css/style.css">
     </head>
     <body>
+        <div id="cabecalho100"> <!-- CABECALHO 100% -->
+            <header> <!-- CABECALHO CENTRALIZADO -->
+                    <img src="imagens/logo.png" id="imgLogo" alt="logo" title="logo"><!-- IMAGEM DO LOGO -->
+
+                    <nav id="menu1"> <!-- MENU PARA NAVEGAÇÃO NO SITE -->
+                        <a href="promocoesWoodyWoodpecker.html" title="Promocoes">
+                            <div class="menu1Item">
+                                Promoções
+                            </div>
+                        </a>
+                        
+                        <a href="livroDoMesWoodyWoodpecker.html" title="Livro do Mes">
+                            <div class="menu1Item">
+                                Livro do Mês
+                            </div>
+                        </a>
+                        
+                        <a href="autoresDestaqueWoodyWoodpecker.html" title="Autores em Destaque">
+                            <div class="menu1Item">
+                                Autores em Destaque
+                            </div>
+                        </a>
+                        
+                        <a href="nossasLojasWoodyWoodpecker.html" title="Nossas Lojas">
+                            <div class="menu1Item">
+                                Nossas Lojas
+                            </div>
+                        </a>
+                            
+                        <a href="sobreLivrariaWoodyWoodpecker.html" title="Sobre a Livraria">
+                            <div class="menu1Item">
+                                Sobre a Livraria
+                            </div>
+                        </a>
+                        
+                        <a href="faleConoscoWoodyWoodpecker.php" title="Fale Conosco">
+                            <div class="menu1Item">
+                                Fale Conosco
+                            </div>
+                        </a>
+                    </nav>
+
+                    <div id="areaLogin"> <!-- AREA DE LOGIN -->
+                        Usuário:
+                        <p><input type="text" name="txtUsuario" size="24" class="textLogin" placeholder="User">
+                        Senha:
+                        <p><input type="password" name="txtSenha" size="24" class="textLogin">
+                        <p><input type="button" name="btnEnviarLogin" value="OK" id="btnEnviarLogin">
+                    </div>
+                </header>
+            </div>    
         
-        <div id="cabecalho100">
-            <header>
-                <img src="imagens/logo.png" id="imgLogo" alt="logo" title="logo">
-
-                <nav id="menu1">
-                    <div class="menu1Item">
-                         Promoções
-                    </div>
-                    <div class="menu1Item">
-                        Livro do Mês
-                    </div>
-                    <div class="menu1Item">
-                        Autores em Destaque
-                    </div>
-                    <div class="menu1Item">
-                       Nossas Lojas
-                    </div>
-                    <div class="menu1Item">
-                        Sobre a Livraria
-                    </div>
-                    <div class="menu1Item">
-                        Fale Conosco
-                    </div>
-                </nav>
-
-                <div id="areaLogin">
-                    Usuário:
-                    <p><input type="text" name="txtUsuario" size="24" class="textLogin" placeholder="User">
-                    Senha:
-                    <p><input type="password" name="txtSenha" size="24" class="textLogin">
-                    <p><input type="button" name="btnEnviarLogin" value="OK" id="btnEnviarLogin">
-                </div>
-            </header>
-        </div>
-        <div id="principalPromocoes">
+        <div id="principalPromocoes"> <!-- DIV PRINCIPAL ABAIXO DO CABECALHO -->
             
             
-            <div id="conteudoPromocoes">
-                <div id="imgPromocoes">
-                    <img src="imagens/slide4.png" alt="Imagem Promocoes" title="Imagem Promocoes" id="imgProm">
+            <div id="conteudoPromocoes"> <!-- DIV PARA CENTRALIZAR O CONTEUDO DAS PROMOCOES -->
+                <div id="slider"> <!-- DIV PARA FOTO DA CAMPANHA DE PROMOCOES -->
+                    <img src="imagens/slide4.png" alt="Imagem Promocoes" title="Imagem promocoes" id="imgPromocoes">
                 </div>
                 
-                <div id="conteudo2Promocoes">
-                    <section class="desconto">
-                        <h1>
-                            LIVROS COM 25% DE DESCONTO
-                        </h1> 
-                        
-                        
-                        <div class="areaLivrosPromocoes">
-
+                <div id="conteudo2Promocoes"> <!-- DIV PARA LIVROS EM PROMOCOES -->
+                    <div id="tituloPromocoes"> <!-- TITULO DAS PROMOCOES -->
+                        PROMOÇÕES
+                    </div>
+                    
+                    <div class="catalogoPromocoes"> <!-- AREA PARA SEPARAR OS LIVROS EM PROMOCAO EM LINHA-->
+                        <div class="areaLivrosPromocao"> <!-- DIV INDIVIDUAL DO LIVRO EM PROMOCAO -->
                             <div class="imgLivro">
                                 <img src="imagens/iracema.jpg" alt="Livro Iracema" title="livro iracema" class="imgLivroItem">
                             </div>
@@ -82,11 +97,9 @@
                             <div class="btnDestaque">
                                 Detalhes
                             </div>
-
                         </div>
                         
-                        <div class="areaLivrosPromocoes">
-
+                        <div class="areaLivrosPromocao"> <!-- DIV INDIVIDUAL DO LIVRO EM PROMOCAO -->
                             <div class="imgLivro">
                                 <img src="imagens/comoeueraantesdevoce.jpg" alt="Livro Como eu era antes de você" title="livro Como eu era antes de você" class="imgLivroItem">
                             </div>
@@ -109,11 +122,10 @@
                             <div class="btnDestaque">
                                 Detalhes
                             </div>
-
                         </div>
                         
-                        <div class="areaLivrosPromocoes">
-
+                        
+                        <div class="areaLivrosPromocao"> <!-- DIV INDIVIDUAL DO LIVRO EM PROMOCAO --> 
                             <div class="imgLivro">
                                 <img src="imagens/asutilarte.jpg" alt="Livro A sutil arte de ligar o foda-se" title="livro A sutil arte de ligar o foda-se" class="imgLivroItem">
                             </div>
@@ -136,18 +148,11 @@
                             <div class="btnDestaque">
                                 Detalhes
                             </div>
-
                         </div>
-                    </section>
-                
-                    <section class="desconto">
-                        <h1>
-                            LIVROS COM 30% DE DESCONTO
-                        </h1> 
-                        
-                        
-                        <div class="areaLivrosPromocoes">
-
+                    </div>
+                    
+                    <div class="catalogoPromocoes"> <!-- AREA PARA SEPARAR OS LIVROS EM PROMOCAO EM LINHA-->
+                        <div class="areaLivrosPromocao"> <!-- DIV INDIVIDUAL DO LIVRO EM PROMOCAO -->
                             <div class="imgLivro">
                                 <img src="imagens/kotlin.jpg" alt="Livro Kotlin com Android" title="livro Kotlin com Android" class="imgLivroItem">
                             </div>
@@ -170,11 +175,9 @@
                             <div class="btnDestaque">
                                 Detalhes
                             </div>
-
                         </div>
                         
-                        <div class="areaLivrosPromocoes">
-
+                        <div class="areaLivrosPromocao"> <!-- DIV INDIVIDUAL DO LIVRO EM PROMOCAO -->
                             <div class="imgLivro">
                                 <img src="imagens/opoderdohabito.png" alt="Livro O poder do hábito" title="livro O poder do hábito" class="imgLivroItem">
                             </div>
@@ -197,11 +200,10 @@
                             <div class="btnDestaque">
                                 Detalhes
                             </div>
-
                         </div>
                         
-                        <div class="areaLivrosPromocoes">
-
+                        
+                        <div class="areaLivrosPromocao"> <!-- DIV INDIVIDUAL DO LIVRO EM PROMOCAO -->
                             <div class="imgLivro">
                                 <img src="imagens/htmlcss.jpg" alt="Livro HTML e CSS" title="livro HTML e CSS" class="imgLivroItem">
                             </div>
@@ -224,19 +226,11 @@
                             <div class="btnDestaque">
                                 Detalhes
                             </div>
-
                         </div>
-                    </section>
+                    </div>
                     
-                    <section class="desconto">
-                        <h1>
-                            LIVROS COM 50% DE DESCONTO
-                        </h1> 
-                        <div class="bordaBottom">
-                        </div>
-                        
-                        <div class="areaLivrosPromocoes">
-
+                    <div class="catalogoPromocoes"> <!-- AREA PARA SEPARAR OS LIVROS EM PROMOCAO EM LINHA-->
+                        <div class="areaLivrosPromocao"> <!-- DIV INDIVIDUAL DO LIVRO EM PROMOCAO -->
                             <div class="imgLivro">
                                 <img src="imagens/ohomemdegiz.jpg" alt="Livro O Homem de Giz" title="livro O Homem de Giz" class="imgLivroItem">
                             </div>
@@ -259,11 +253,9 @@
                             <div class="btnDestaque">
                                 Detalhes
                             </div>
-
                         </div>
                         
-                        <div class="areaLivrosPromocoes">
-
+                        <div class="areaLivrosPromocao"> <!-- DIV INDIVIDUAL DO LIVRO EM PROMOCAO -->
                             <div class="imgLivro">
                                 <img src="imagens/arevolucao.jpg" alt="Livro A Revolução dos Bichos" title="livro A Revolução dos Bichos" class="imgLivroItem">
                             </div>
@@ -287,11 +279,10 @@
                             <div class="btnDestaque">
                                 Detalhes
                             </div>
-
                         </div>
                         
-                        <div class="areaLivrosPromocoes">
-
+                        
+                        <div class="areaLivrosPromocao"> <!-- DIV INDIVIDUAL DO LIVRO EM PROMOCAO -->
                             <div class="imgLivro">
                                 <img src="imagens/mulheresquecorrem.png" alt="Livro Mulheres que correm com os lobos" title="livro Mulheres que correm com os lobos" class="imgLivroItem">
                             </div>
@@ -314,13 +305,12 @@
                             <div class="btnDestaque">
                                 Detalhes
                             </div>
-
                         </div>
-                    </section>
+                    </div>
                 </div>
             </div>
             
-            <footer>
+            <footer> <!-- RODAPE -->
                 Copiright 2018 - Todos os direitos reservados / Desenvolvido por: Vitoria Gonçalves
             </footer>
         </div>
