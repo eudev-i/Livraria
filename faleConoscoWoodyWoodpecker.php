@@ -60,7 +60,9 @@
     <body>
         <div id="cabecalho100"> <!-- CABECALHO 100% -->
             <header> <!-- CABECALHO CENTRALIZADO -->
+                <a href="homeWoodyWoodpecker.html" title="Home">    
                     <img src="imagens/logo.png" id="imgLogo" alt="logo" title="logo"> <!-- IMAGEM LOGO -->
+                </a>
 
                     <nav id="menu1"> <!-- MENU PARA NAVEGAÇÃO NO SITE -->
                         <a href="promocoesWoodyWoodpecker.html" title="Promocoes">
@@ -123,17 +125,17 @@
                         <form name="frmFaleConosco" method="get" action="faleConoscoWoodyWoodpecker.php">
                         <div class="formItemEsquerdo1">
                             <label class="letrasFormulario">Nome:</label><span class="vermelho">*</span>
-                            <br><input type="text" name="txtNomeContatos" placeholder=" Digite seu nome completo" size="60" class="txtEsquerdo1" id="nome" onkeypress="return validar(event, 'num', this.id);" required>
+                            <br><input type="text" name="txtNomeContatos" placeholder=" Digite seu nome completo" size="60" class="txtEsquerdo1" id="nome" maxlength="100" onkeypress="return validar(event, 'num', this.id);" required>
                         </div>
                         
                         <div class="formItemDireito1">
                             <label class="letrasFormulario">Profissão:</label><span class="vermelho">*</span>
-                            <br><input type="text" name="txtProfissaoContatos" placeholder=" Digite a sua profissão" size="51" class="txtEsquerdo1" id="profissao" required>
+                            <br><input type="text" name="txtProfissaoContatos" placeholder=" Digite a sua profissão" size="51" class="txtEsquerdo1" id="profissao" maxlength="100" required>
                         </div>
                         
                         <div class="formItemEsquerdo1">
                             <label class="letrasFormulario">Email:</label><span class="vermelho">*</span>
-                            <br><input type="email" name="txtEmailContatos" placeholder=" Digite seu e-mail" size="60" class="txtEsquerdo1" id="email" required>
+                            <br><input type="email" name="txtEmailContatos" maxlength="100" placeholder=" Digite seu e-mail" size="60" class="txtEsquerdo1" id="email" required>
                         </div>
                         
                         <div class="formItemDireito1">
@@ -147,22 +149,22 @@
                         
                         <div class="formItemEsquerdo2">
                             <label class="letrasFormulario">Telefone:</label>
-                            <br><input type="text" name="txtTelefoneContatos" placeholder=" Ex.: 00000000" size="51" class="txtEsquerdo1" id="txtTel" onkeypress="return validar(event, 'txt', this.id);" pattern="[0-9]{4}[0-9]{4}">
+                            <br><input type="text" name="txtTelefoneContatos" placeholder=" Ex.: 00000000" size="51" class="txtEsquerdo1" id="txtTel" maxlength="8" onkeypress="return validar(event, 'txt', this.id);" pattern="[0-9]{4}[0-9]{4}">
                         </div>
                         
                         <div class="formItemDireito2">
                             <label class="letrasFormulario">Celular:</label><span class="vermelho">*</span>
-                            <br><input type="text" name="txtCelularContatos" placeholder=" Ex.: 900000000" size="51" class="txtEsquerdo1" id="txtCel" onkeypress="return validar(event, 'txt', this.id);" pattern="(9[0-9]{4}[0-9]{4})">
+                            <br><input type="text" name="txtCelularContatos" placeholder=" Ex.: 000000000" size="51" class="txtEsquerdo1" id="txtCel" maxlength="9" onkeypress="return validar(event, 'txt', this.id);" pattern="([0-9]{5}[0-9]{4})">
                         </div>
                         
                         <div class="formItemEsquerdo2">
                             <label class="letrasFormulario">Home Page:</label>
-                            <br><input type="text" name="txtHomePageContatos" placeholder=" Digite a sua Home Page" size="51" class="txtEsquerdo1" id="txtHomePage">
+                            <br><input type="text" name="txtHomePageContatos" placeholder=" Digite a sua Home Page" size="51" maxlength="100" class="txtEsquerdo1" id="txtHomePage">
                         </div>
                         
                         <div class="formItemDireito2">
                             <label class="letrasFormulario">Link do Facebook:</label>
-                            <br><input type="text" name="txtLinkFacebookContatos" placeholder=" Digite o link do seu facebook" size="51" class="txtEsquerdo1" id="txtLinkFace">
+                            <br><input type="text" name="txtLinkFacebookContatos" placeholder=" Digite o link do seu facebook" size="51" maxlength="100" class="txtEsquerdo1" id="txtLinkFace">
                         </div>
                         
                         <div class="formItemEsquerdo3">

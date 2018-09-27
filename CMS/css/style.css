@@ -1,0 +1,290 @@
+/*****CSS*****/
+body, h1, h2, h3, p, ul, ol, li, figure{/*ZRNDO PADDING E MARGIN DE ALGUNS ELEMENTOS*/
+    padding: 0px;
+    margin: 0px;
+}
+a{
+    text-decoration: none;
+    color: inherit;
+}
+/*DIV PRINCIPAL*/
+#principal{ 
+    width: 1100px;
+    height: 880px;
+    background-color: #605855;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 50px;
+}
+/*AREA DO CABECALHO*/
+header{ 
+    width: 1100px;
+    height: 150px;
+
+}
+/*TEXTO CABECALHO*/
+#textoCabecalho{ 
+    width: 600px;
+    height: 90px;
+    /*background-color: aqua;*/
+    padding-top: 55px;
+    font-family: Comic Sans MS;
+    font-size: 30px;
+    margin-left: 50px;
+    float: left;
+    color: #ea9049;
+}
+/*LOGO*/
+#areaLogo{ 
+    width: 360px;
+    height: 150px;
+    margin-left: 750px;
+    /*background-color: beige;*/
+}
+/*CONFIGURANDO IMAGEM LOGO*/
+#imgLogo{
+    width: 400px;
+    height: 200px;
+    margin-top: -30px;
+}
+/*AREA QUE FICARÁ MENU E NOME DE QUEM ESTÁ LOGADO*/
+#areaMenu{
+    width: 1100px;
+    height: 160px;
+    background-color: #c6baaf;
+    padding-top: 20px;
+}
+/*AREA DO MENU*/
+nav{
+    width: 720px;
+    height: 150px;
+    font-family: Comic Sans MS;
+    font-size: 17px;
+    text-align: center;
+    font-weight: bold;
+    float: left;
+}
+.menuItem{
+    width: 120px;
+    height: 150px;
+    float: left;
+    margin-right: 60px;
+    cursor: pointer;
+    color: black;
+}
+.imgConfig{
+    width: 80px;
+    height: 90px;
+}
+#nomeUsuario{
+    width: 380px;
+    height: 100px;
+    margin-left: 720px;
+    font-family: Comic Sans MS;
+    font-size: 20px;
+    text-align: right;
+    font-weight: bold;
+    padding-top: 20px;
+}
+#areaSair{
+    width: 380px;
+    height: 30px;
+    margin-left: 720px;
+    font-family: Comic Sans MS;
+    font-size: 18px;
+    text-align: right;
+    font-weight: bold;
+    color: red;
+}
+/*AREA DO CONTEUDO*/
+#conteudo{
+    width: 1098px;
+    height: 500px;
+    background-color:#fff;
+    border-right: 1px solid #605855;
+    border-left: 1px solid #605855;
+}
+#conteudoAdmConteudo{
+    width: 1058px;
+    height: 460px;
+    background-color:#fff;
+    border-right: 1px solid #605855;
+    border-left: 1px solid #605855;
+    padding: 20px;
+}
+/*TEXTO BOAS VINDAS*/
+#boasVindas{
+    width: 900px;
+    height: 340px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 50px;
+    text-align: center;
+    padding-top: 160px;
+    color: #ea9049;
+}
+/*AREA DE CADA PAGINA GERENCIADA*/
+#guardaConteudoEsquerdo{
+    width: 400px;
+    height: 480px;
+    float: left;
+}
+#guardaConteudoDireito{
+    width: 400px;
+    height: 480px;
+    margin-left: 550px;
+}
+.areaPaginaGerenciada{
+    width: 400px;
+    height: 130px;
+    margin-bottom: 40px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+.imgIdentificaPagina{
+    width: 100px;
+    height: 130px;
+    float: left;
+}
+.nomePagina{
+    width: 280px;
+    height: 80px;
+    margin-left: 120px;
+    padding-top: 50px;
+    font-size: 20px;
+    color: #ea9049;
+    font-family: Comic Sans MS;
+}
+/*CONTEUDO DO CMS FALE CONOSCO*/
+#tituloFaleConosco{
+    width: 400px;
+    height: 40px;
+    background-color: #ea9049;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: Comic Sans MS;
+    font-size: 25px;
+    text-align: center;   
+}
+#tabelaFaleConoscoCms{
+    width: 1060px;
+    height: 430px;
+    margin-top:8px;
+    /*background-color: beige;*/
+}
+#areaTitulos{
+    width: 1060px;
+    height: 30px;
+    border: 1px solid black;
+}
+#tituloNome{
+    width: 298px;
+    height: 30px;
+    font-size: 20px;
+    color: #ea9049;
+    font-family: Comic Sans MS;
+    text-align: left;
+    border-right: 1px solid black;
+    padding-left: 2px;
+    float: left;
+}
+#tituloCelular{
+    width: 200px;
+    height: 30px;
+    font-size: 20px;
+    color: #ea9049;
+    font-family: Comic Sans MS;
+    text-align: left;
+    border-right: 1px solid black;
+    padding-left: 2px;
+    float: left;
+}
+#tituloEmail{
+    width: 350px;
+    height: 30px;
+    font-size: 20px;
+    color: #ea9049;
+    font-family: Comic Sans MS;
+    text-align: left;
+    border-right: 1px solid black;
+    padding-left: 2px;
+    float: left;
+}
+#tituloOpcoes{
+    width: 200px;
+    height: 30px;
+    font-size: 20px;
+    color: #ea9049;
+    font-family: Comic Sans MS;
+    text-align: left;
+    padding-left: 2px;
+    float: left;
+}
+#linhaResultados{
+    width: 1060px;
+    height: 30px;
+    border-bottom: 1px solid black;
+    border-right: 1px solid black;
+    border-left: 1px solid black;
+}
+#resultadoNome{
+    width: 298px;
+    height: 20px;
+    font-size: 15px;
+    color: black;
+    font-family: Comic Sans MS;
+    text-align: left;
+    border-right: 1px solid black;
+    padding-left: 2px;
+    float: left;
+    padding-top: 10px;
+}
+#resultadoCelular{
+    width: 200px;
+    height: 20px;
+    font-size: 15px;
+    color: black;
+    font-family: Comic Sans MS;
+    text-align: left;
+    border-right: 1px solid black;
+    padding-left: 2px;
+    float: left;
+    padding-top: 10px;
+}
+#resultadoEmail{
+    width: 350px;
+    height: 20px;
+    font-size: 15px;
+    color: black;
+    font-family: Comic Sans MS;
+    text-align: left;
+    border-right: 1px solid black;
+    padding-left: 2px;
+    float: left;
+    padding-top: 10px;
+}
+#resultadoOpcoes{
+    width: 200px;
+    height: 30px;
+    text-align: left;
+    padding-left: 2px;
+    float: left;
+}
+.imgOpcoes{
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    float: left;
+    margin-right: 20px;
+}
+/*AREA DO RODAPE*/
+footer{
+    width: 1100px;
+    height: 25px;
+    font-size: 15px;
+    text-align: center;
+    font-family: Comic Sans MS;
+    padding-top: 15px;
+    font-weight: bold;
+    color: #ea9049;
+}

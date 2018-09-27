@@ -1,6 +1,6 @@
-//FUNCTION PARA VALIDAR CAMPOS NO FALE CONOSCO
+﻿//FUNCTION PARA VALIDAR CAMPOS NO FALE CONOSCO
 function validar(caracter, blocktype, id) {
-    /*document.getElementById(id).style = "background: #fff;";*/
+    
                 
     if(blocktype == "num") {
     /*Transformando a letra em ascii, o código de identificação*/
@@ -10,7 +10,7 @@ function validar(caracter, blocktype, id) {
              var letra = caracter.which;
                 
         if(letra > 47 && letra <= 57) {
-            /*document.getElementById(id).style="background: #f00;";*/
+            
             return false; /*Cancela a ação da tecla*/
         }  
                  
@@ -21,7 +21,7 @@ function validar(caracter, blocktype, id) {
             var letra = caracter.which;
                 
         if(letra < 47 || letra > 57) {
-            /*document.getElementById(id).style="background: #f00;";*/
+            
             return false; /*Cancela a ação da tecla*/
         }  
     } //fim elseif  
