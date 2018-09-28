@@ -166,11 +166,11 @@ nav{
     font-size: 25px;
     text-align: center;   
 }
-#tabelaFaleConoscoCms{
+#tabelaFaleConosco{
     width: 1060px;
     height: 430px;
     margin-top:8px;
-    /*background-color: beige;*/
+    /*background-color: bisque;*/
 }
 #areaTitulos{
     width: 1060px;
@@ -227,6 +227,12 @@ nav{
     border-right: 1px solid black;
     border-left: 1px solid black;
 }
+#guardaResultadosFaleConosco{
+    width: 1060px;
+    height: 390px;
+    overflow: auto;
+    /*background-color: skyblue;*/
+}
 #resultadoNome{
     width: 298px;
     height: 20px;
@@ -276,6 +282,88 @@ nav{
     cursor: pointer;
     float: left;
     margin-right: 20px;
+}
+/*CONTUDO DO CMS ADM USUARIOS*/
+#tabelaUsuarios{
+    width: 1060px;
+    height: 295px;
+    /*background-color: bisque;*/
+}
+#guardaLinhasResultados{
+    /*background-color: skyblue;*/
+    width: 1060px;
+    height:252px;
+    overflow: auto;
+}
+#areaFormUsuarios{
+    width: 910px;
+    height: 160px;
+    margin-top: 5px;
+    margin-left: auto;
+    margin-right: auto;
+}
+#formCadastro{
+    width: 910px;
+    height: 110px;
+    margin-top: 5px;
+    font-family: Comic Sans MS;
+    font-size: 15px;
+}
+.linhaUsuarios{
+    width: 910px;
+    height: 55px;
+}
+.guardaInput1{
+    width: 340px;
+    height: 55px;
+    float: left;
+}
+.guardaInput2{
+    width: 190px;
+    height: 55px;
+    float: left;
+}
+.guardaInput3{
+    width: 230px;
+    height: 55px;
+    float: left;
+}
+.guardaBotao{
+    width: 150px;
+    height: 55px;
+    float: left;
+}
+.inputText1{
+    border: none;
+    width: 300px;
+    height: 22px;
+    border-radius: 20px;
+    background-color: #e5e5e5;
+}
+.inputText2{
+    border: none;
+    width: 150px;
+    height: 22px;
+    border-radius: 20px;
+    background-color: #e5e5e5;
+}
+.inputText3{
+    border: none;
+    width: 180px;
+    height: 22px;
+    border-radius: 20px;
+    background-color: #e5e5e5;
+}
+.botao{
+    width: 120px;
+    height: 30px;
+    border: none;
+    border-radius: 20px;
+    background-color: #ea9049;
+    font-family: Comic Sans MS;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 12px;
 }
 /*AREA DO RODAPE*/
 footer{
