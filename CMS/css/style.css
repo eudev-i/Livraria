@@ -283,7 +283,39 @@ nav{
     float: left;
     margin-right: 20px;
 }
-/*CONTUDO DO CMS ADM USUARIOS*/
+/*CONTEUDO DO CMS PARA ESCOLHA DE GERENCIAMNETO DE CADASTRO DE USARIOS OU NIVEIS*/
+#conteudoEscolha{
+    width: 450px;
+    height: 360px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 50px;
+    padding-top: 140px;
+    /*background-color: cornsilk;*/
+    font-family: Comic Sans MS;
+    font-size: 20px;
+    text-align: center;
+    font-weight: bold;
+}
+#escolha1{
+    width: 140px;
+    height: 220px;
+    /*background-color: aquamarine;*/
+    cursor: pointer;
+    float:left; 
+}
+#escolha2{
+    width: 140px;
+    height: 220px;
+    /*background-color: skyblue;*/
+    cursor: pointer;
+    margin-left: 310px;
+}
+.imgEscolha{
+    width: 140px;
+    height: 150px;
+}
+/*CONTEUDO DO CMS ADM USUARIOS*/
 #tabelaUsuarios{
     width: 1060px;
     height: 295px;
@@ -365,6 +397,13 @@ nav{
     cursor: pointer;
     margin-top: 12px;
 }
+.imgOpcoes2{
+    width: 25px;
+    height: 30px;
+    cursor: pointer;
+    float: left;
+    margin-right: 15px;
+}
 /*AREA DO RODAPE*/
 footer{
     width: 1100px;
@@ -375,4 +414,166 @@ footer{
     padding-top: 15px;
     font-weight: bold;
     color: #ea9049;
+}
+
+/*MODAL*/
+#container{
+    height: 100%;
+    width: 100%;
+    background-color: #0000004a;
+    position: fixed;
+    display: none;
+    
+}
+#modal{
+    height: 500px;
+    width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+#principalModal{
+    width: 800px;
+    height:650px;
+    margin-left: -150px;   
+    padding-top: 150px;
+}
+#conteudoModal{
+    width: 800px;
+    height:670px;
+    background-color:#edd2bd;
+}
+.linha{
+    width: 700px;
+    height: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: Comic Sans MS;
+    padding-top: 20px;
+}
+.linha2{
+    width: 700px;
+    height: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: Comic Sans MS;
+    padding-top: 20px;
+}
+.caixaForm{
+    width: 700px;
+    height: 30px;
+    font-size: 20px;
+    color: #ea9049;
+}
+.caixaForm1{
+    width: 75px;
+    height: 30px;
+    font-size: 20px;
+    color: #ea9049;
+    float: left;
+}
+.caixaForm2{
+    width: 90px;
+    height: 30px;
+    font-size: 20px;
+    color: #ea9049;
+    float: left;
+}
+.caixaForm3{
+    width: 120px;
+    height: 30px;
+    font-size: 20px;
+    color: #ea9049;
+    float: left;
+}
+.caixaForm4{
+    width: 135px;
+    height: 30px;
+    font-size: 20px;
+    color: #ea9049;
+    float: left;
+}
+.caixaForm5{
+    width: 220px;
+    height: 30px;
+    font-size: 20px;
+    color: #ea9049;
+    float: left;
+}
+.caixaForm6{
+    width: 320px;
+    height: 30px;
+    font-size: 20px;
+    color: #ea9049;
+    float: left;
+}
+.resultadoForm{
+    width: 700px;
+    height: 30px;
+    color: #000000;
+    font-size: 20px;
+}
+.resultadoForm2{
+    width: 700px;
+    height: 80px;
+    color: #000000;
+    font-size: 20px;
+}
+#botaoFechar{
+    width:75px;
+    height: 25px;
+    background-color: #ea9049;
+    margin-left: 720px;
+    font-family: Comic Sans MS;
+    padding-top: 3px;
+    padding-left: 5px;
+    margin-top: -640px;
+}
+/*CONTEUDO DO CMS ADM NIVEIS*/
+#tabelaNiveis{
+    width: 505px;
+    height: 295px;
+    margin-right: auto;
+    margin-left: auto;
+}
+#areaTitulos2{
+    width: 505px;
+    height: 30px;
+    border: 1px solid black;
+}
+#tituloNome2{
+    width: 298px;
+    height: 30px;
+    font-size: 20px;
+    color: #ea9049;
+    font-family: Comic Sans MS;
+    text-align: left;
+    border-right: 1px solid black;
+    padding-left: 2px;
+    float: left;
+}
+#tituloOpcoes2{
+    width: 200px;
+    height: 30px;
+    font-size: 20px;
+    color: #ea9049;
+    font-family: Comic Sans MS;
+    text-align: left;
+    padding-left: 2px;
+    float: left;
+}
+#linhaResultados2{
+    width: 505px;
+    height: 30px;
+    border-bottom: 1px solid black;
+    border-right: 1px solid black;
+    border-left: 1px solid black;
+}
+#formCadastroNivel{
+    width: 460px;
+    height: 110px;
+    margin-top: 5px;
+    font-family: Comic Sans MS;
+    font-size: 15px;
+    margin-left: auto;
+    margin-right: auto;
 }

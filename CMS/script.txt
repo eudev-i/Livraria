@@ -1,0 +1,59 @@
+<!--<a href="#" class="fechar">
+            Fechar
+        </a>
+        
+        <table width="500" border="1">
+            <tr>
+                <td>
+                    Nome:
+                </td>
+                <td>
+                    <?php echo($nome) ?>
+                </td>
+            </tr>
+            
+            <tr>
+                <td>
+                    Profissão:
+                </td>
+                <td>
+                    <?php echo($profissao) ?>
+                </td>
+            </tr>
+            
+            <tr>
+                <td>
+                    Email:
+                </td>
+                <td>
+                    <?php echo($email) ?>
+                </td>
+            </tr>
+            
+            <tr>
+                <td>
+                    Sexo
+                </td>
+                <td>
+                    <?php echo($sexo) ?>
+                </td>
+            </tr>
+            
+            <tr>
+                <td>
+                    Telefone
+                </td>
+                <td>
+                    <?php echo($telefone) ?>
+                </td>
+            </tr>
+            
+            <tr>
+                <td>
+                    Celular:
+                </td>
+                <td>
+                    <?php echo($celular) ?>
+                </td>
+            </tr>
+        </table>-->
