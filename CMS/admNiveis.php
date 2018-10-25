@@ -2,40 +2,79 @@
     require_once('conexao.php');
     $conexao = conexaoBD();
 
-    $sql = "SELECT * FROM tbl_nivel_usuario";
 
-    $select = mysqli_query($conexao, $sql);
+
+
+    /*DECLARAÇÃO DAS VARIAVEIS NO EDITAR, PARA CORREÇÃO DE ERRO*/
+    $nomeNivel = null;
+    
+    $botao = "SALVAR";
+
+    session_start();
 
     /*PASSANDO INFORMAÇÕES PARA A BIBLIOTECA DO MYSQL, ESTABELECE A CONEXÃO COM O BANCO DE DADOS MSQL, USANDO A BIBLIOTECA MYSQLI*/
 
     if(isset($_GET['btnSalvar'])){
-
+        
         /*RESGATA VALOR DOS CAMPOS*/
         $nomeNivel = $_GET['txtNomeNivel'];
             
-            
-        $sql = "INSERT INTO tbl_nivel_usuario
-                    (nome_nivel)
+        if($_GET['btnSalvar']=="SALVAR"){
+            $sql = "INSERT INTO tbl_nivel_usuario
+                        (nome_nivel)
 
-                VALUES('".$nomeNivel."')";
-            
+                    VALUES('".$nomeNivel."')";
+        }
+        
+        else if($_GET['btnSalvar']=="EDITAR"){
+            $sql = "UPDATE tbl_nivel_usuario SET
+                                                nome_nivel = '".$nomeNivel."'
+                                                
+                                                WHERE id_nivel=".$_SESSION['id_nivel'];
+        
+        }
+        
         mysqli_query($conexao, $sql);/*EXECUTA NO BANCO DE DADOS O SCRIPT*/
         header('location:admNiveis.php');
-        
     }
 
+    /*VERIFICA A EXISTÊNCIA DA VARIAVEL MODO NA URL*/
+    /*A VARIAVEL MODO É ENVIADA PARA A URL ATRAVES DO LINK NA TABELA DA CONSULTA, ASSIM COMO O ID DO REGISTRO QUE SERÁ EXCLUIDO OU EDITADO*/
     if(isset($_GET['modo'])){
+        $modo = $_GET['modo'];
         
-        if($_GET['modo'] == 'excluir'){
-            $id_nivel = $_GET['id_nivel'];
+        if($modo == 'excluir'){/*SE MODO FOR EXCLUIR FAZ O DELETE*/
             
+            $id_nivel = $_GET['id_nivel'];
             $sql = "delete from tbl_nivel_usuario where id_nivel=".$id_nivel;
             mysqli_query($conexao, $sql);
             header('location:admNiveis.php');
+        }
+        
+        else if($modo == 'editar'){
+            $botao = "EDITAR";
+            $id_nivel = $_GET['id_nivel'];
+            $_SESSION['id_nivel'] = $id_nivel;
+            $sql= "select * from tbl_nivel_usuario where id_nivel=".$id_nivel;
+            
+            $select = mysqli_query($conexao, $sql);/*EXECUTA NO BANCO DE DADOS O SCRIPT*/
+            
+            if($rsConsulta=mysqli_fetch_array($select)){
+                $nomeNivel = $rsConsulta['nome_nivel'];
+            }
+        }
+        
+        else if($modo == 'ativar'){
+            
+            
+        }
+        
+        else if($modo == 'desativar'){
+            
             
         }
     }
-
+    
 ?>
 
 <!DOCTYPE html>
@@ -118,24 +157,33 @@
                     <div id="guardaLinhasResultados">
                         
                         <?php
-                            while($resultContatos=mysqli_fetch_array($select)){
+                            $sql = "SELECT * FROM tbl_nivel_usuario";
+
+                            $select = mysqli_query($conexao, $sql);
+                            while($resultNivel=mysqli_fetch_array($select)){
                         ?>
                         
                         <div id="linhaResultados2"> <!-- LINHA1 -->
                             <div id="resultadoNome">
-                                <?php echo($resultContatos['nome_nivel']) ?>
+                                <?php echo($resultNivel['nome_nivel']) ?>
                             </div>
 
                             <div id="resultadoOpcoes">
-                                <a href="admNiveis.php?modo=excluir&id_nivel=<?php echo($resultContatos['id_nivel'])?>" >
+                                <a href="admNiveis.php?modo=excluir&id_nivel=<?php echo($resultNivel['id_nivel'])?>" >
                                     <img src="imagens/delete.png" class="imgOpcoes2">
                                 </a>
-
-                                <img src="imagens/toedit.png" class="imgOpcoes2">
-
-                                <img src="imagens/ativado.png" class="imgOpcoes2">
+                                    
+                                <a href="admNiveis.php?modo=editar&id_nivel=<?php echo($resultNivel['id_nivel'])?>">
+                                    <img src="imagens/toedit.png" class="imgOpcoes2">
+                                </a>
                                 
-                                <img src="imagens/desativado.png" class="imgOpcoes2">
+                                <a href="admNiveis.php?modo=ativar&id_nivel=<?php echo($resultNivel['id_nivel'])?>">
+                                    <img src="imagens/ativado.png" class="imgOpcoes2">
+                                </a>
+                                
+                                <a href="admNiveis.php?modo=desativar&id_nivel=<?php echo($resultNivel['id_nivel'])?>">
+                                    <img src="imagens/desativado.png" class="imgOpcoes2">
+                                </a>
 
                             </div>
                         </div>
@@ -158,12 +206,12 @@
                             <form name="frmNiveisUsuario" method="get" action="admNiveis.php">
                                 <div class="guardaInput1">
                                     <label>Nome:</label>
-                                    <br><input type="text" name="txtNomeNivel" placeholder="Digite o nome do nível" class="inputText1">
+                                    <br><input type="text" name="txtNomeNivel" placeholder="Digite o nome do nível" value="<?php echo($nomeNivel)?>" class="inputText1">
                                 </div>
 
 
                                 <div class="guardaBotao">
-                                    <input type="submit" name="btnSalvar" value="SALVAR" class="botao"> 
+                                    <input type="submit" name="btnSalvar" value="<?php echo($botao) ?>" class="botao"> 
                                 </div>
                             </form>
                         </div>

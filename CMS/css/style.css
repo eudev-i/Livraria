@@ -425,11 +425,28 @@ footer{
     display: none;
     
 }
+
+/*MODAL USUARIO*/
+.containerUsuario{
+    height: 100%;
+    width: 100%;
+    background-color: #0000004a;
+    position: fixed;
+    display: none;
+    
+}
 #modal{
     height: 500px;
     width: 500px;
     margin-left: auto;
     margin-right: auto;
+}
+#modalUsuario{
+    height: 500px;
+    width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    /*background-color: white;*/
 }
 #principalModal{
     width: 800px;
