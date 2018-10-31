@@ -365,6 +365,13 @@ nav{
     height: 55px;
     float: left;
 }
+.guardaBotao2{
+    width: 150px;
+    height: 55px;
+    float: left;
+    margin-left: 350px;
+    margin-top: 50px;
+}
 .inputText1{
     border: none;
     width: 300px;
@@ -384,6 +391,12 @@ nav{
     width: 180px;
     height: 22px;
     border-radius: 20px;
+    background-color: #e5e5e5;
+}
+.inputText4{
+    border: none;
+    width: 200px;
+    height: 170px;
     background-color: #e5e5e5;
 }
 .botao{
@@ -617,4 +630,109 @@ footer{
     border-right: 1px solid black;
     padding-left: 2px;
     float: left;
+}
+/*CMS AUTORES EM DESTAQUE*/
+#tituloImagemAutor{
+    width: 200px;
+    height: 30px;
+    font-size: 20px;
+    color: #ea9049;
+    font-family: Comic Sans MS;
+    text-align: left;
+    border-right: 1px solid black;
+    padding-left: 2px;
+    float: left;
+}
+#tituloNomeAutor{
+    width: 298px;
+    height: 30px;
+    font-size: 20px;
+    color: #ea9049;
+    font-family: Comic Sans MS;
+    text-align: left;
+    border-right: 1px solid black;
+    padding-left: 2px;
+    float: left;
+}
+#tituloBiografia{
+    width: 300px;
+    height: 30px;
+    font-size: 20px;
+    color: #ea9049;
+    font-family: Comic Sans MS;
+    text-align: left;
+    border-right: 1px solid black;
+    padding-left: 2px;
+    float: left;
+}
+#resultadoImagemAutor{
+    width: 200px;
+    height: 20px;
+    font-size: 15px;
+    color: black;
+    font-family: Comic Sans MS;
+    text-align: left;
+    border-right: 1px solid black;
+    padding-left: 2px;
+    float: left;
+    padding-top: 10px;
+}
+#resultadoNomeAutor{
+    width: 299px;
+    height: 20px;
+    font-size: 15px;
+    color: black;
+    font-family: Comic Sans MS;
+    text-align: left;
+    border-right: 1px solid black;
+    padding-left: 2px;
+    float: left;
+    padding-top: 10px;
+}
+#resultadoBiografia{
+    width: 298px;
+    height: 20px;
+    font-size: 15px;
+    color: black;
+    font-family: Comic Sans MS;
+    text-align: left;
+    border-right: 1px solid black;
+    padding-left: 2px;
+    float: left;
+    padding-top: 10px;
+}
+#tituloAutores{
+    width: 600px;
+    height: 40px;
+    background-color: #ea9049;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: Comic Sans MS;
+    font-size: 25px;
+    text-align: center;   
+}
+#tabelaAutores{
+    width: 1060px;
+    height: 200px;
+}
+#guardaLinhasResultadosAutores{
+    width: 1060px;
+    height:170px;
+    overflow: auto;
+}
+.linhaAutores{
+    width: 450px;
+    height: 55px;
+    float: left;
+    margin-right: 20px;
+}
+.linhaAutores2{
+    width: 300px;
+    height: 55px;
+    float: left;
+    
+}
+.linhaAutore3{
+    width: 300px;
+    height: 55px;
 }
