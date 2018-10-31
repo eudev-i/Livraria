@@ -1,7 +1,7 @@
-<?php
+﻿<?php
     function conexaoBD(){
         $host = "localhost";/*AONDE ESTÁ O BANCO DE DADOS (PODE SER COLOCADOS PO IP OU LOCAL) - localhost*/
-        $database = "db_formulariofaleconosco";/*NOME NO MEU DATABASE - db_formulariofaleconosco*/
+        $database = "db_livrariaWoody";/*NOME NO MEU DATABASE - db_livrariaWoody*/
         $user = "root";/*USUSARIO QUE ME EU ME LOGO NO BANDO - root*/
         $password = "bcd127"; /*SENHA DO BANCO - bcd127*/
 

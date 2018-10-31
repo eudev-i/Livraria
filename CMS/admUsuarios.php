@@ -2,7 +2,9 @@
     require_once('conexao.php');
     $conexao = conexaoBD();
 
+
     /*DECLARAÇÃO DAS VARIAVEIS NO EDITAR, PARA CORREÇÃO DE ERRO*/
+    $desabilitado = "";
     $nomeUsuario = null;
     $celularUsuario = null;
     $telefoneUsuario = null;
@@ -10,6 +12,7 @@
     $sexoUsuario = null;
     $loginUsuario = null;
     $senhaUsuario = null;
+    
 
     $botao = "SALVAR";
 
@@ -52,8 +55,7 @@
         }
         
         mysqli_query($conexao, $sql);/*EXECUTA NO BANCO DE DADOS O SCRIPT*/
-       // header('location:admUsuarios.php');
-        echo($sql);
+        header('location:admUsuarios.php');
     }
 
     if(isset($_GET['modo'])){
@@ -98,7 +100,6 @@
             
             mysqli_query($conexao, $sql);
 
-            echo($sql);
         }
         
         else if($modo == 'desativar'){
@@ -109,6 +110,8 @@
             mysqli_query($conexao, $sql);
             
         }
+        
+        
     }
 
 ?>
@@ -122,38 +125,9 @@
               type="text/css"
               href="css/style.css">
         
-        <script src="js/jquery.js"></script>
         
-        <script>
-            $(document).ready(function(){
-               $(".v").click(function(){
-                   
-                   $(".containerUsuario").fadeIn(100); 
-               });
-            });
-            
-            function modalUsuario(idItem){
-                alert("pkl");
-                $.ajax({
-                    type: "GET",
-                    url: "modalUsuario.php",
-                    data:{idItem:idItem},
-                    success: function(dados){
-                        
-                        $('#modalUsuario').html(dados);
-                    }
-                })
-            }
-        </script>
     </head>
     <body>
-        <!-- CÓDIGO PARA GERAR A TELA DA MODAL NO NAVEGADOR -->
-        <div class="containerUsuario">
-            <div id="modalUsuario">
-        
-            </div>
-        </div>
-        <!-- *********************************************** -->
         
         <div id="principal">
             <header> <!-- CABECALHO -->
@@ -217,7 +191,7 @@
                         </div>
                        
                         <div id="tituloEmail">
-                            Nome de Usuário
+                            Login do Usuario
                         </div>
                        
                        <div id="tituloOpcoes">
@@ -232,9 +206,20 @@
 
                             $select = mysqli_query($conexao, $sql);
                             while($resultUsuario=mysqli_fetch_array($select)){
+                                
+								/**/    
+								$status = $resultUsuario['status'];
+									
+								if($status == 0){
+									$mudaCorStatus = "#ef9787";
+									
+								}
+								else{
+									$mudaCorStatus = "#98ef88";
+								}
                         ?>
                         
-                        <div id="linhaResultados"> <!-- LINHA1 -->
+                        <div id="linhaResultados" style="background-color:<?php echo($mudaCorStatus)?>"> <!-- LINHA1 -->
                             
                             <div id="resultadoNome">
                                 <?php echo($resultUsuario['nome_usuario']) ?>
@@ -265,9 +250,6 @@
                                     <img src="imagens/desativado.png" class="imgOpcoes2">
                                 </a>
                                 
-                                <a  href="#" class="v" onclick="modalUsuario(<?php echo($resultUsuario['id_usuario'])?>)">
-                                    <img src="imagens/visualizar.png" class="imgOpcoes2">
-                                </a>
                             </div>
                             
                         </div>
@@ -290,27 +272,38 @@
                             <div class="linhaUsuarios"> <!-- PRIMEIRA LINHA -->
                                 <div class="guardaInput1">
                                     <label>Nome:</label>
-                                    <br><input type="text" name="txtNome" value="<?php echo($nomeUsuario)?>" placeholder="Digite seu nome completo" class="inputText1">
+                                    <br><input type="text" name="txtNome" value="<?php echo($nomeUsuario)?>" placeholder="Digite seu nome completo" class="inputText1" maxlength="100" onkeypress="return validar(event, 'num', this.id);" required <?php echo($desabilitado)?>>
                                 </div>
 
                                 <div class="guardaInput2">
                                     <label>Celular:</label>
-                                    <br><input type="text" name="txtCelular" value="<?php echo($nomeUsuario)?>" value="<?php echo($celularUsuario)?>" placeholder="(11)95426-3763" class="inputText2">
+                                    <br><input type="text" name="txtCelular" value="<?php echo($celularUsuario)?>" value="<?php echo($celularUsuario)?>" placeholder="(11)95426-3763" class="inputText2" onkeypress="return validar(event, 'txt', this.id);" required <?php echo($desabilitado)?>>
                                 </div>
 
                                 <div class="guardaInput2">
                                     <label>Telefone:</label>
-                                    <br><input type="text" name="txtTelefone" value="<?php echo($telefoneUsuario)?>" placeholder="(11)2536-0000"class="inputText2">
+                                    <br><input type="text" name="txtTelefone" value="<?php echo($telefoneUsuario)?>" placeholder="(11)2536-0000"class="inputText2" onkeypress="return validar(event, 'txt', this.id);" <?php echo($desabilitado)?>>
                                 </div>
 
                                 <div class="guardaInput2">
                                     <label>Sexo:</label>
                                     <br>
                                     <select name="sltSexo">
+                                        <?php
+    
+                                            $resultSexoM = "";
+                                            $resultSexoF = "";
+                                               
+                                            if($sexoUsuario == "M"){
+                                                $resultSexoM = 'selected';
+                                            }else if($sexoUsuario == "F"){
+                                                $resultSexoF = 'selected';
+                                            }
+                                        ?>
+                                        
                                       <option value="">Escolha uma opção</option>
-                                      <option value="F">Feminino</option>
-                                      <option value="M">Masculino</option>
-                                      <option value="P">Prefiro não dizer</option>
+                                      <option value="F" <?php echo($resultSexoF)?>>Feminino</option>
+                                      <option value="M" <?php echo($resultSexoM)?>>Masculino</option>
                                     </select>
                                 </div>
                             </div>
@@ -360,16 +353,16 @@
 
                                 <div class="guardaInput3">
                                     <label>Nome de Usuário:</label>
-                                    <br><input type="text" value="<?php echo($loginUsuario)?>" name="txtLogin" class="inputText3">
+                                    <br><input type="text" value="<?php echo($loginUsuario)?>" name="txtLogin" class="inputText3" onkeypress="return validar(event, 'num', this.id);" required <?php echo($desabilitado)?>>
                                 </div>
 
                                 <div class="guardaInput2">
                                     <label>Senha:</label>
-                                    <br><input type="password" value="<?php echo($senhaUsuario)?>" name="txtSenha" class="inputText2">
+                                    <br><input type="password" value="<?php echo($senhaUsuario)?>" name="txtSenha" class="inputText2" required <?php echo($desabilitado)?>>
                                 </div>
 
                                 <div class="guardaBotao">
-                                    <input type="submit" name="btnSalvar" value="<?php echo($botao) ?>" class="botao"> 
+                                    <input type="submit" name="btnSalvar" value="<?php echo($botao) ?>" class="botao" > 
                                 </div>
 
                                 <div class="guardaBotao">
@@ -385,5 +378,6 @@
                 Copyright 2018 - Todos os direitos reservados / Desenvolvido por: Vitoria Gonçalves
             </footer>
         </div>
+        <script src="js/javaScript/script.js"></script>
     </body> 
 </html>

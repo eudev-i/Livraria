@@ -594,3 +594,27 @@ footer{
     margin-left: auto;
     margin-right: auto;
 }
+/*CMS LIVRO DO MES*/
+#tabelaLivroMes{
+    width: 550px;
+    height: 430px;
+    margin-top:8px;
+    margin-left: auto;
+    margin-right: auto;
+}
+#areaTitulosMes{
+    width: 550px;
+    height: 30px;
+    border: 1px solid black;
+}
+#tituloNomeMes{
+    width: 300px;
+    height: 30px;
+    font-size: 20px;
+    color: #ea9049;
+    font-family: Comic Sans MS;
+    text-align: left;
+    border-right: 1px solid black;
+    padding-left: 2px;
+    float: left;
+}

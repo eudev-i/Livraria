@@ -2,7 +2,7 @@
     require_once('conexao.php');
     $conexao = conexaoBD();
 
-
+    $desabilitado = "";
 
 
     /*DECLARAÇÃO DAS VARIAVEIS NO EDITAR, PARA CORREÇÃO DE ERRO*/
@@ -64,15 +64,40 @@
             }
         }
         
+        
         else if($modo == 'ativar'){
+            $id_nivel = $_GET['id_nivel'];
             
+            $sql = "update tbl_nivel_usuario set status_nivel = '1' where id_nivel=".$id_nivel;
+            
+            mysqli_query($conexao, $sql);
             
         }
         
         else if($modo == 'desativar'){
+            $id_nivel = $_GET['id_nivel'];
             
+            $sql = "update tbl_nivel_usuario set status_nivel = '0' where id_nivel=".$id_nivel;
             
+            mysqli_query($conexao, $sql);
+
         }
+        
+        else if($modo == 'visualizar'){
+            $id_nivel = $_GET['id_nivel'];
+            $_SESSION['id_nivel'] = $id_nivel;
+            $sql= "select * from tbl_nivel_usuario where id_nivel=".$id_nivel;
+            
+            $select = mysqli_query($conexao, $sql);/*EXECUTA NO BANCO DE DADOS O SCRIPT*/
+            
+            if($rsConsulta=mysqli_fetch_array($select)){
+                $nomeNivel = $rsConsulta['nome_nivel'];
+            }
+            
+            $desabilitado = "disabled";
+
+        }
+        
     }
     
 ?>
@@ -161,9 +186,20 @@
 
                             $select = mysqli_query($conexao, $sql);
                             while($resultNivel=mysqli_fetch_array($select)){
+                                
+                                $status_nivel = $resultNivel['status_nivel'];
+                                
+                                if($status_nivel == 0){
+                                    $mudaCorStatus = "#ef9787";
+                                }
+                                
+                                else{
+                                    $mudaCorStatus = "#98ef88";
+                                }
+                                
                         ?>
                         
-                        <div id="linhaResultados2"> <!-- LINHA1 -->
+                        <div id="linhaResultados2" style="background-color:<?php echo($mudaCorStatus)?>"> <!-- LINHA1 -->
                             <div id="resultadoNome">
                                 <?php echo($resultNivel['nome_nivel']) ?>
                             </div>
@@ -183,6 +219,10 @@
                                 
                                 <a href="admNiveis.php?modo=desativar&id_nivel=<?php echo($resultNivel['id_nivel'])?>">
                                     <img src="imagens/desativado.png" class="imgOpcoes2">
+                                </a>
+                                
+                                <a href="admNiveis.php?modo=visualizar&id_nivel=<?php echo($resultNivel['id_nivel'])?>">
+                                    <img src="imagens/visualizar.png" class="imgOpcoes2">
                                 </a>
 
                             </div>
@@ -206,7 +246,7 @@
                             <form name="frmNiveisUsuario" method="get" action="admNiveis.php">
                                 <div class="guardaInput1">
                                     <label>Nome:</label>
-                                    <br><input type="text" name="txtNomeNivel" placeholder="Digite o nome do nível" value="<?php echo($nomeNivel)?>" class="inputText1">
+                                    <br><input type="text" name="txtNomeNivel" placeholder="Digite o nome do nível" value="<?php echo($nomeNivel)?>" class="inputText1" maxlength="100" onkeypress="return validar(event, 'num', this.id);" <?php echo($desabilitado)?>>
                                 </div>
 
 
@@ -223,5 +263,6 @@
                 Copyright 2018 - Todos os direitos reservados / Desenvolvido por: Vitoria Gonçalves
             </footer>
         </div>
+        <script src="js/javaScript/script.js"></script>
     </body> 
 </html>
