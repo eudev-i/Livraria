@@ -3,98 +3,39 @@
     $conexao = conexaoBD();
     
     $botao = "SALVAR";
-    
+    $nomeAutor = "";
+    $biografiaAutor = "";
+    $fotoAutor = "";
+
     session_start();
 
-    if(isset($_GET['btnSalvar'])){
+    if(isset($_POST['btnSalvar'])){
         
         /*RESGATA VALOR DOS CAMPOS*/
-        $nomeAutor = $_GET['nome_autor'];
-        $fotoAutor = $_GET['foto_autor'];
-        $biografiaAutor = $_GET['biografia_autor'];
+        $nomeAutor = $_POST['txtNome'];
+        $biografiaAutor = $_POST['txtBiografia'];
+        $arquivo = $_FILES['fleFoto']['name'];
+        $tamanho_arquivo = $_FILES['fleFoto']['size'];
+        $tamanho_arquivo = round($tamanho_arquivo / 1024);
+        $ext_arquivo = strrchr($arquivo,  ".");
+        $nome_arquivo = pathinfo($arquivo, PATHINFO_FILENAME);
+        $nome_arquivo = md5(uniqid(time()).$nome_arquivo);
+        $diretorio_arquivo ="arquivos/";
+        $arquivos_permitidos = array(".jpg", ".png", ".jpeg");
             
         
+        $sql ="INSERT INTO tbl_autor (nome_autor, foto_autor, biografia_autor)
+                VALUES('".$nomeAutor."','".$foto."','".$biografiaAutor."')";
+        
+        
+        /*else if($_POST['btnSalvar']=="EDITAR"){
             
-        if($_GET['btnSalvar']=="SALVAR"){
-            $sql = "INSERT INTO tbl_autor
-                    (nome_autor,foto_autor,biografia_autor)
-                    VALUES('".$nomeAutor."','".$fotoAutor."','".$biografiaAutor."')";
-        }
-        
-        /*else if($_GET['btnSalvar']=="EDITAR"){
-            $sql = "UPDATE tbl_usuario SET
-                                            nome_usuario = '".$nomeUsuario."',
-                                            celular_usuario = '".$celularUsuario."',
-                                            telefone_usuario = '".$telefoneUsuario."',
-                                            sexo_usuario = '".$sexoUsuario."',
-                                            login_usuario = '".$loginUsuario."',
-                                            senha_usuario = '".$senhaUsuario."',
-                                            id_nivel = '".$nivelUsuario."'
-                                            
-                                                
-                                            WHERE id_usuario=".$_SESSION['id_usuario'];
-        
-        }
+        }*/
         
         mysqli_query($conexao, $sql);/*EXECUTA NO BANCO DE DADOS O SCRIPT*/
-        //header('location:admUsuarios.php');
+        //header('location:admAutoresDestaque.php');
+        
     }
-
-    /*if(isset($_GET['modo'])){
-        $modo = $_GET['modo'];
-        
-        if($modo == 'excluir'){/*SE MODO FOR EXCLUIR FAZ O DELETE*/
-            
-            /*$id_usuario = $_GET['id_usuario'];
-            $sql = "delete from tbl_usuario where id_usuario=".$id_usuario;
-            mysqli_query($conexao, $sql);
-            header('location:admUsuarios.php');
-        }
-        
-        else if($modo == 'editar'){
-            $botao = "EDITAR";
-            $id_usuario = $_GET['id_usuario'];
-            $_SESSION['id_usuario'] = $id_usuario;
-            $sql= "select tbl_usuario.*, tbl_nivel_usuario.nome_nivel
-                    from tbl_usuario, tbl_nivel_usuario
-                    where tbl_usuario.id_nivel = tbl_nivel_usuario.id_nivel and tbl_usuario.id_usuario=".$id_usuario;
-            
-            $select = mysqli_query($conexao, $sql);/*EXECUTA NO BANCO DE DADOS O SCRIPT*/
-            
-            /*if($rsConsulta=mysqli_fetch_array($select)){
-                $nomeUsuario = $rsConsulta['nome_usuario'];
-                $celularUsuario = $rsConsulta['celular_usuario'];
-                $telefoneUsuario = $rsConsulta['telefone_usuario'];
-                $nivelUsuario = $rsConsulta['id_nivel'];
-                $nomeNivelUsuario = $rsConsulta['nome_nivel'];
-                $sexoUsuario = $rsConsulta['sexo_usuario'];
-                $loginUsuario = $rsConsulta['login_usuario'];
-                $senhaUsuario = $rsConsulta['senha_usuario'];    
-                
-            }
-            
-        }
-        
-        else if($modo == 'ativar'){
-            $id_usuario = $_GET['id_usuario'];
-            
-            $sql = "update tbl_usuario set status = '1' where id_usuario=".$id_usuario;
-            
-            mysqli_query($conexao, $sql);
-
-        }
-        
-        else if($modo == 'desativar'){
-            $id_usuario = $_GET['id_usuario'];
-            
-            $sql = "update tbl_usuario set status = '0' where id_usuario=".$id_usuario;
-            
-            mysqli_query($conexao, $sql);
-            
-        }
-        
-        
-    }*/
     
 
 ?>
@@ -108,7 +49,31 @@
               type="text/css"
               href="css/style.css">
         
+        <script src="js/jquery.min.js"></script>
+        <script src="js/jquery.form.js"></script>
         
+        <script>
+            $(document).ready(function(){
+                $('foto'.live('change', function(){
+                    $('#visualizar').html("<img src='imagens/carregando.gif'>");
+                    setTimeout(function(){
+                    $('frmFoto').ajaxForm({
+                        target:'#visualizar'
+                    }).submit();
+                    }, 2000);
+                });
+                  
+                /*COLOCANDO git ANIMADO NO CLIQUE DO BOTÃO SALVAR*/
+                $('#btnSalvar').click(function(){
+                    $('visualizar').html("<img src='imagens/ajax-salvando.gif'>");
+                    
+                    setTimeOut(function(){
+                        frmCadastro.submit();
+                    },2000);
+                });
+                   
+            });
+        </script>
     </head>
     <body>
         
@@ -184,23 +149,29 @@
                     
                     <div id="guardaLinhasResultadosAutores">
                         
+                        <?php
+                            $sql = "select * from tbl_autor order by id_autor desc";
+                            $select = mysqli_query($conexao, $sql);
                         
+                            while($rsAutores=mysqli_fetch_array($select)){
+                        ?>
                         
                         <div id="linhaResultados" > <!-- LINHA1 -->
                             
                             <div id="resultadoImagemAutor">
-                                
+                                <img src="<?php echo($rsAutores['foto_autor'])?>" width="50px" height="50px">
+                    
                             </div>
 
                             <div id="resultadoNomeAutor">
-                                
+                                <?php echo($rsAutores['nome_autor'])?>
                             </div>
 
                             <div id="resultadoBiografia">
-                                
+                                <?php echo($rsAutores['biografia_autor'])?>
                             </div>
 
-                            <div id="resultadoOpcoes">
+                            <div id="resultadoOpcoesAutores">
                                 
                                     <img src="imagens/delete.png" class="imgOpcoes2">
                                 
@@ -221,43 +192,10 @@
                             
                         </div>
                         
-                        <div id="linhaResultados" style="background-color:<?php echo($mudaCorStatus)?>"> <!-- LINHA1 -->
-                            
-                            <div id="resultadoImagemAutor">
-                                
-                            </div>
+                        <?php
+                            }
+                        ?>
 
-                            <div id="resultadoNomeAutor">
-                                
-                            </div>
-
-                            <div id="resultadoBiografia">
-                                
-                            </div>
-
-                            <div id="resultadoOpcoes">
-                                
-                                    <img src="imagens/delete.png" class="imgOpcoes2">
-                                
-
-                                
-                                    <img src="imagens/toedit.png" class="imgOpcoes2">
-                                
-                                
-                                
-                                    <img src="imagens/ativado.png" class="imgOpcoes2">
-                               
-                                
-                                
-                                    <img src="imagens/desativado.png" class="imgOpcoes2">
-                                
-                                
-                            </div>
-                            
-                        </div>
-
-
-                        
                     </div>
                 </div>
                 
@@ -268,7 +206,7 @@
                     
                     <div id="formCadastro"><!-- FORMULARIO DE CADASTRO -->
                         
-                        <form name="frmAutores" method="get" action="admAutoresDestaque.php">
+                        <form name="frmAutores" method="post" action="admAutoresDestaque.php" enctype="multipart/form-data">
                         
                             <div class="linhaAutores"> <!-- PRIMEIRA LINHA -->
                                 <div class="guardaInput1">
@@ -282,11 +220,7 @@
                             
                             <div class="linhaAutores2"> <!-- 2º LINHA -->
 
-                                <div class="guardaInput1">
-                                    <label>Imagem do Autor:</label>
-                                    <br><input type="text" value="<?php echo($fotoAutor)?>" name="txtLogin" class="inputText4" >
-                                    <p>Foto:<input type="file" value="Escolher arquivo" name="fleFoto" id="foto">
-                                </div>
+                                
 
                                 <div class="guardaBotao2">
                                     <input type="submit" name="btnSalvar" value="<?php echo($botao)?>" class="botao" > 
@@ -297,8 +231,8 @@
                             <div class="linhaAutores3">
                                 <div class="guardaInput1">
                                     <label>Biografia:</label>
-                                    <br><textarea rows="9" cols="62" name="txtBiografia" value="<?php echo($biografiaAutor)?>">
-                                        At w3schools.com you will learn how to make a website. We offer free tutorials in all web development technologies. 
+                                    <br><textarea rows="9" cols="62" name="txtBiografia" value="<?php echo($biografiaAutor)?>" style="resize: none" name="txtBiografia">
+                                        
                                         </textarea>
                                 </div>
                             </div>
@@ -306,6 +240,18 @@
                         
                         
                         </form>
+                        
+                        <div class="guardaInput5">
+                            <label>Imagem do Autor:</label>
+                            <br><input type="text" value="<?php echo($fotoAutor)?>" name="txtLogin" class="inputText4" id="visualizar">
+                                    
+                            <form id="frmFoto" name="uploadImagens" action="uploadAutores" method="post" enctype="multipart/form-data">
+                                
+                            <p>Foto:<input type="file" value="Escolher arquivo" name="fleFoto" id="foto">
+                                
+                            </form>
+                        </div>
+                        
                     </div>
                 </div>
             </div>

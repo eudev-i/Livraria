@@ -350,6 +350,14 @@ nav{
     height: 55px;
     float: left;
 }
+.guardaInput5{
+    width: 340px;
+    height: 55px;
+    float: left;
+    margin-left: 50px;
+    margin-top: -50px;
+    margin-left: 150px;
+}
 .guardaInput2{
     width: 190px;
     height: 55px;
@@ -667,7 +675,7 @@ footer{
 }
 #resultadoImagemAutor{
     width: 200px;
-    height: 20px;
+    height: 50px;
     font-size: 15px;
     color: black;
     font-family: Comic Sans MS;
@@ -679,7 +687,7 @@ footer{
 }
 #resultadoNomeAutor{
     width: 299px;
-    height: 20px;
+    height: 50px;
     font-size: 15px;
     color: black;
     font-family: Comic Sans MS;
@@ -691,7 +699,7 @@ footer{
 }
 #resultadoBiografia{
     width: 298px;
-    height: 20px;
+    height: 50px;
     font-size: 15px;
     color: black;
     font-family: Comic Sans MS;
@@ -700,6 +708,21 @@ footer{
     padding-left: 2px;
     float: left;
     padding-top: 10px;
+}
+#resultadoOpcoesAutores{
+    width: 200px;
+    height: 45px;
+    text-align: left;
+    padding-left: 2px;
+    float: left;
+    padding-top: 15px;
+}
+#linhaResultados{
+    width: 1060px;
+    height: 60px;
+    border-bottom: 1px solid black;
+    border-right: 1px solid black;
+    border-left: 1px solid black;
 }
 #tituloAutores{
     width: 600px;
